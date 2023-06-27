@@ -26,11 +26,6 @@ public class R201801385 extends AdvancedRobot {
 		// Robot main loop
 		while (true) {
 
-			// ahead(50);
-			// turnGunRight(360);
-			// back(100);
-			// turnGunRight(360);
-
 			tatakaeee();
 		}
 	}
@@ -83,6 +78,8 @@ public class R201801385 extends AdvancedRobot {
 		// metodo default para ir a la pelea (el titulo es una referencia a SNK)
 
 		// si no estoy atacando a alguien, ando escaneando a quien atacar
+
+		// el metodo implementado es búsqueda en profundidad.
 
 		if (atacando) {
 			setAhead(distanciaAtk - 150);
