@@ -1,0 +1,70 @@
+package IA1jun23;
+
+import robocode.*;
+import java.awt.Color;
+
+// API help : https://robocode.sourceforge.io/docs/robocode/robocode/Robot.html
+
+/**
+ * R201801385 - a robot by Yasmin
+ */
+public class R201801385 extends AdvancedRobot {
+	/**
+	 * run: R201801385's default behavior
+	 */
+
+	private int direccion = 1;
+
+	public void run() {
+
+		// SETEANDO COLORES
+		setBodyColor(Color.pink);
+		setGunColor(Color.pink);
+		setRadarColor(Color.pink);
+		setBulletColor(Color.pink);
+		setScanColor(Color.pink);
+
+		// Robot main loop
+		while (true) {
+			// Replace the next 4 lines with any behavior you would like
+			// ahead(50);
+			// turnGunRight(360);
+			// back(100);
+			// turnGunRight(360);
+
+			tatakaeee();
+		}
+	}
+
+	public void onHitWall(HitWallEvent e) {
+		System.out.println("LE PEGUE A UN MURO");
+		turnGunLeft(90);
+		turnGunRight(180);
+		direccion = direccion * -1;
+		System.out.println("FIN DEL MURO PEGAO");
+		tatakaeee();
+	}
+
+	public void onScannedRobot(ScannedRobotEvent e) {
+		fire(1);
+
+	}
+
+	public void onHitByBullet(HitByBulletEvent e) {
+		back(10);
+	}
+
+	public void onHitRobot(HitRobotEvent e) {
+		if (e.isMyFault()) {
+		}
+	}
+
+	// MIS METODOS DE ROBOT
+
+	public void tatakaeee() {
+		// metodo default para buscar pelea (el titulo es una referencia a SNK)
+		setAhead(500 * direccion);
+
+	}
+
+}
