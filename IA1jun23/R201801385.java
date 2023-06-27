@@ -55,8 +55,8 @@ public class R201801385 extends AdvancedRobot {
 			anguloBala = 90;
 		}
 
-		setTurnRight(90);
-		setAhead(-150);
+		setTurnRight(anguloBala);
+		setAhead(-400);
 		waitFor(new TurnCompleteCondition(this));
 
 	}
@@ -73,6 +73,8 @@ public class R201801385 extends AdvancedRobot {
 	public void revertirDireccion() {
 		// si hay un muro, avanzo en la direccion contraria
 		direccion = direccion * -1;
+		setAhead(1000 * direccion);
+		waitFor(new TurnCompleteCondition(this));
 	}
 
 	// MIS METODOS
